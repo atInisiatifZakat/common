@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Inisiatif\Package\Common\Concerns;
 
@@ -20,7 +22,7 @@ trait UuidPrimaryKey
     public static function bootUuidPrimaryKey(): void
     {
         static::creating(function (Model $model): void {
-            if (!isset($model->attributes[$model->getKeyName()])) {
+            if (! isset($model->attributes[$model->getKeyName()])) {
                 $model->incrementing = false;
 
                 $uuid = Uuid::uuid6();
