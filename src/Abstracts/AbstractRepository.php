@@ -14,8 +14,9 @@ use Inisiatif\Package\Common\Concerns\EloquentAwareRepository;
 use Inisiatif\Package\Contract\Common\Model\ResourceInterface;
 use Inisiatif\Package\Contract\Common\Concern\TaggableCacheAwareInterface;
 use Inisiatif\Package\Contract\Common\Repository\ModelRepositoryInterface;
+use Inisiatif\Package\Contract\Common\Repository\EloquentAwareRepositoryInterface;
 
-abstract class AbstractRepository implements ModelRepositoryInterface, TaggableCacheAwareInterface
+abstract class AbstractRepository implements ModelRepositoryInterface, TaggableCacheAwareInterface, EloquentAwareRepositoryInterface
 {
     use TaggableCacheAware;
     use EloquentAwareRepository;
@@ -75,14 +76,10 @@ abstract class AbstractRepository implements ModelRepositoryInterface, TaggableC
         return $model;
     }
 
-    /**
-     * @psalm-suppress MoreSpecificReturnType
-     * @psalm-suppress LessSpecificReturnStatement
-     * @psalm-suppress InvalidReturnStatement
-     */
     public function findUsingColumn(string $column, $value): Collection
     {
         return $this->rememberCache(static::class, __FUNCTION__, func_get_args(), function () use ($column, $value): Collection {
+            /** @psalm-var Collection */
             return $this->getModel()->newQuery()->where($column, $value)->get();
         });
     }
@@ -95,6 +92,7 @@ abstract class AbstractRepository implements ModelRepositoryInterface, TaggableC
     public function findUsingColumns(array $columns)
     {
         return $this->rememberCache(static::class, __FUNCTION__, func_get_args(), function () use ($columns): Collection {
+            /** @psalm-var Collection */
             return $this->getModel()->newQuery()->where($columns)->get();
         });
     }

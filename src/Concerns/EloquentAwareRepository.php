@@ -5,31 +5,38 @@ declare(strict_types=1);
 namespace Inisiatif\Package\Common\Concerns;
 
 use Closure;
+use Exception;
 use LogicException;
+use ReflectionClass;
+use RuntimeException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\ConnectionInterface;
+use Inisiatif\Package\Contract\Common\Model\ResourceInterface;
 
 trait EloquentAwareRepository
 {
     /**
-     * @var string|Model
+     * @var string
+     *
+     * @psalm-var class-string
      */
     protected $model;
 
-    /**
-     * @psalm-suppress MixedMethodCall
-     */
     public function getModel(): Model
     {
-        if (is_string($this->model) && class_exists($this->model)) {
-            return new $this->model();
-        }
+        try {
+            $reflection = new ReflectionClass($this->model);
 
-        if ($this->model instanceof Model) {
-            return $this->model;
-        }
+            $model = $reflection->newInstanceWithoutConstructor();
 
-        throw new LogicException('Model must be valid FQN model class or model object.');
+            if (($model instanceof Model) && ($model instanceof ResourceInterface)) {
+                return $model;
+            }
+
+            throw new LogicException(sprintf('Model must be instanceof `%s` and `%s`.', Model::class, ResourceInterface::class));
+        } catch (Exception $exception) {
+            throw new RuntimeException($exception->getMessage(), (int) $exception->getCode(), $exception);
+        }
     }
 
     public function getConnection(): ConnectionInterface
@@ -37,10 +44,13 @@ trait EloquentAwareRepository
         return $this->getModel()->getConnection();
     }
 
-    public function transaction(Closure $callback, int $attempts = 1): void
+    /**
+     * @psalm-return mixed
+     */
+    public function transaction(Closure $callback, int $attempts = 1)
     {
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->getConnection()->transaction($callback, $attempts);
+        return $this->getConnection()->transaction($callback, $attempts);
     }
 
     public function beginTransaction(): void
@@ -56,10 +66,5 @@ trait EloquentAwareRepository
     public function rollBack(): void
     {
         $this->getConnection()->rollBack();
-    }
-
-    protected function setModel(Model $model): void
-    {
-        $this->model = $model;
     }
 }
