@@ -45,6 +45,6 @@ final class PathPaginationResolverTest extends TestCase
         ]);
 
         $url = PathPaginationResolver::resolveFor(PathPaginationResolver::PROXY, $request);
-        $this->assertSame('https://apiproxy.inisiatif.id/foo/bar?foo=bar', $url);
+        $this->assertSame('https://apiproxy.inisiatif.id/foo/bar', $url);
     }
 }

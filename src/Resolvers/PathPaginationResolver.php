@@ -33,9 +33,7 @@ final class PathPaginationResolver
         /** @var string $path */
         $path = $request->header('X-Forwarded-Prefix', '/' . $request->path());
 
-        $query = $request->getQueryString() ? '?' . $request->getQueryString() : '';
-
-        return $schema . '://' . $host . $path . $query;
+        return $schema . '://' . $host . $path;
     }
 
     private function makeDefault(Request $request): string
