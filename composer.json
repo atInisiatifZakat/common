@@ -15,8 +15,8 @@
     "require": {
         "php": "^7.4",
         "ext-json": "*",
-        "illuminate/http": "^7.0|^8.0",
-        "illuminate/support": "^7.0|^8.0",
+        "illuminate/http": "^7.30|^8.26",
+        "illuminate/support": "^7.30|^8.26",
         "ramsey/uuid": "^4.0"
     },
     "require-dev": {
