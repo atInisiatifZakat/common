@@ -17,6 +17,7 @@
         "ext-json": "*",
         "illuminate/http": "^7.30|^8.26",
         "illuminate/support": "^7.30|^8.26",
+        "laminas/laminas-hydrator": "^4.1",
         "ramsey/uuid": "^4.0"
     },
     "require-dev": {
