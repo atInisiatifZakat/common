@@ -35,6 +35,17 @@ abstract class AbstractRepository implements ModelRepositoryInterface, TaggableC
         return true;
     }
 
+    public function delete($id): void
+    {
+        $model = $this->findUsingId($id);
+
+        if ($model) {
+            $model->delete();
+        }
+
+        $this->flushCache();
+    }
+
     public function findUsingId($id)
     {
         return $this->rememberCache(static::class, __FUNCTION__, func_get_args(), function () use ($id): ?ResourceInterface {
