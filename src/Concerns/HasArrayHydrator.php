@@ -17,6 +17,16 @@ trait HasArrayHydrator
         return $hydrator->extract($this);
     }
 
+    /**
+     * @return mixed
+     */
+    public function fromArray(array $data)
+    {
+        $hydrator = $this->getHydrator();
+
+        return $hydrator->hydrate($data, $this);
+    }
+
     protected function getHydrator(): AbstractHydrator
     {
         $hydrator = new ObjectPropertyHydrator();
