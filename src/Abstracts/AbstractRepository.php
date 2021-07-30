@@ -21,9 +21,6 @@ abstract class AbstractRepository implements ModelRepositoryInterface, TaggableC
     use TaggableCacheAware;
     use EloquentAwareRepository;
 
-    /**
-     * @noinspection PhpUndefinedMethodInspection
-     */
     public function save(ResourceInterface $resource): bool
     {
         Assert::isInstanceOf($resource, Model::class);
