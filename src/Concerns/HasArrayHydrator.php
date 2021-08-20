@@ -19,6 +19,8 @@ trait HasArrayHydrator
 
     /**
      * @return mixed
+     *
+     * @psalm-suppress InvalidArgument
      */
     public function fromArray(array $data)
     {
