@@ -15,6 +15,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*",
+        "illuminate/database": "^7.30|^8.26",
         "illuminate/http": "^7.30|^8.26",
         "illuminate/support": "^7.30|^8.26",
         "laminas/laminas-hydrator": "^4.1",
