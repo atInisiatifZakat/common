@@ -5,38 +5,39 @@ declare(strict_types=1);
 namespace Inisiatif\Package\Common\Concerns;
 
 use Closure;
-use Illuminate\Cache\TagSet;
-use Illuminate\Cache\NullStore;
-use Illuminate\Cache\TaggedCache;
+use RuntimeException;
+use Illuminate\Contracts\Cache\Factory;
+use Illuminate\Contracts\Cache\Repository;
 
 trait TaggableCacheAware
 {
-    /**
-     * @var int
-     */
-    protected $cacheLifetime = 0;
+    protected int $cacheLifetime = 0;
 
-    /**
-     * @var TaggedCache|null
-     */
-    private $cache = null;
+    private ?Factory $factory = null;
 
     abstract public function getTagName(): string;
 
-    public function getCache(): TaggedCache
+    public function getCache(): Repository
     {
-        $fallbackStore = new NullStore();
+        if ($this->factory === null) {
+            /** @var Factory $cache */
+            $cache = app('cache');
 
-        if ($this->cache === null) {
-            return new TaggedCache($fallbackStore, new TagSet($fallbackStore));
+            $this->factory = $cache;
         }
 
-        return $this->cache;
+        $store = $this->factory->store();
+
+        if (! \method_exists($store, 'tags')) {
+            throw new RuntimeException('This cache store does not support tagging.');
+        }
+
+        return $store;
     }
 
-    public function setCache(TaggedCache $cache): self
+    public function setCache(Factory $factory): self
     {
-        $this->cache = $cache;
+        $this->factory = $factory;
 
         return $this;
     }
@@ -67,6 +68,7 @@ trait TaggableCacheAware
 
         $cacheKey = $class . '@' . $method . '.' . $hash;
 
+        /** @psalm-suppress UndefinedInterfaceMethod */
         $store = $this->getCache()->tags($this->getTagName());
 
         return $lifetime === -1 ?
@@ -76,6 +78,7 @@ trait TaggableCacheAware
 
     protected function flushCache(): bool
     {
+        /** @psalm-suppress UndefinedInterfaceMethod */
         return $this->getCache()->tags($this->getTagName())->flush();
     }
 
