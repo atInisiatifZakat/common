@@ -46,7 +46,7 @@ abstract class AbstractRepository implements ModelRepositoryInterface, TaggableC
 
     public function findUsingId($id)
     {
-        return $this->rememberCache(static::class, __FUNCTION__, func_get_args(), function () use ($id): ?ResourceInterface {
+        return $id === null ? null : $this->rememberCache(static::class, __FUNCTION__, func_get_args(), function () use ($id): ?ResourceInterface {
             return $id instanceof UuidInterface ? $this->findOneUsingColumn('id', $id->toString()) : $this->findOneUsingColumn('id', $id);
         });
     }
