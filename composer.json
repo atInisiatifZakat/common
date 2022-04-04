@@ -20,7 +20,8 @@
         "illuminate/routing": "^8.26",
         "illuminate/support": "^8.26",
         "laminas/laminas-hydrator": "^4.1",
-        "ramsey/uuid": "^4.0"
+        "ramsey/uuid": "^4.0",
+        "spatie/data-transfer-object": "^3.7"
     },
     "require-dev": {
         "dg/bypass-finals": "^1.3",
