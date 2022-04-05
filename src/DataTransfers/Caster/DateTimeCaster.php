@@ -8,7 +8,7 @@ use DateTimeInterface;
 use Illuminate\Support\Carbon;
 use Spatie\DataTransferObject\Caster;
 
-final class DatetimeCaster implements Caster
+final class DateTimeCaster implements Caster
 {
     public function cast(mixed $value): DateTimeInterface
     {
