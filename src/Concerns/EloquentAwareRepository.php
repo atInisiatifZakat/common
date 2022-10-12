@@ -10,6 +10,7 @@ use LogicException;
 use ReflectionClass;
 use RuntimeException;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\ConnectionInterface;
 use Inisiatif\Package\Contract\Common\Model\ResourceInterface;
 
@@ -37,6 +38,11 @@ trait EloquentAwareRepository
         } catch (Exception $exception) {
             throw new RuntimeException($exception->getMessage(), (int) $exception->getCode(), $exception);
         }
+    }
+
+    public function newModelQuery(): Builder
+    {
+        return $this->getModel()->newQuery();
     }
 
     public function getConnection(): ConnectionInterface
