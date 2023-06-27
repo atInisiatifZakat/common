@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="5.13.0@a0a9c27630bcf8301ee78cb06741d2907d8c9fef">
-  <file src="src/Abstracts/AbstractRepository.php">
-    <PossiblyUnusedParam>
-      <code>$column</code>
-      <code>$column</code>
-      <code>$columns</code>
-      <code>$columns</code>
-      <code>$id</code>
-      <code>$id</code>
-      <code>$resource</code>
-      <code>$value</code>
-      <code>$value</code>
-    </PossiblyUnusedParam>
-    <UndefinedClass>
-      <code>ModelRepositoryInterface</code>
-    </UndefinedClass>
-    <UnusedClass>
-      <code>AbstractRepository</code>
-    </UnusedClass>
-  </file>
   <file src="src/Abstracts/Event.php">
     <UnusedClass>
       <code>Event</code>
@@ -36,20 +17,18 @@
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Concerns/EloquentAwareRepository.php">
-    <PossiblyUnusedParam>
-      <code>$attempts</code>
-      <code>$callback</code>
-    </PossiblyUnusedParam>
+    <PossiblyUnusedMethod>
+      <code>newModelQuery</code>
+    </PossiblyUnusedMethod>
   </file>
   <file src="src/Concerns/TaggableCacheAware.php">
-    <PossiblyUnusedParam>
-      <code>$args</code>
-      <code>$cacheLifetime</code>
-      <code>$callback</code>
-      <code>$class</code>
-      <code>$factory</code>
-      <code>$method</code>
-    </PossiblyUnusedParam>
+    <PossiblyUnusedMethod>
+      <code>disableCache</code>
+      <code>makeForeverCache</code>
+    </PossiblyUnusedMethod>
+    <PossiblyUnusedReturnValue>
+      <code>bool</code>
+    </PossiblyUnusedReturnValue>
   </file>
   <file src="src/Concerns/UuidPrimaryKey.php">
     <PossiblyUnusedMethod>
@@ -66,11 +45,6 @@
   <file src="src/Contracts/Notable.php">
     <UnusedClass>
       <code>Notable</code>
-    </UnusedClass>
-  </file>
-  <file src="src/DataTransfers/Caster/DateTimeCaster.php">
-    <UnusedClass>
-      <code>DateTimeCaster</code>
     </UnusedClass>
   </file>
   <file src="src/Exceptions/DomainActionException.php">
@@ -101,16 +75,6 @@
       <code>BranchFactory</code>
     </UnusedClass>
   </file>
-  <file src="src/Http/Middleware/EnsureFrontendRequestsAreStateful.php">
-    <UnusedClass>
-      <code>EnsureFrontendRequestsAreStateful</code>
-    </UnusedClass>
-  </file>
-  <file src="src/Hydrator/ObjectPropertyHydrator.php">
-    <UnusedClass>
-      <code>ObjectPropertyHydrator</code>
-    </UnusedClass>
-  </file>
   <file src="src/Providers/CommonServiceProvider.php">
     <UnusedClass>
       <code>CommonServiceProvider</code>
@@ -119,16 +83,6 @@
   <file src="src/Providers/TelescopeServiceProvider.php">
     <UnusedClass>
       <code>TelescopeServiceProvider</code>
-    </UnusedClass>
-  </file>
-  <file src="src/Resolvers/PathPaginationResolver.php">
-    <PossiblyUnusedMethod>
-      <code>resolveFor</code>
-    </PossiblyUnusedMethod>
-  </file>
-  <file src="src/Testing/PHPUnit/Hooks/BypassFinalHook.php">
-    <UnusedClass>
-      <code>BypassFinalHook</code>
     </UnusedClass>
   </file>
 </files>
