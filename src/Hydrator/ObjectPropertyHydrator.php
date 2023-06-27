@@ -29,6 +29,7 @@ final class ObjectPropertyHydrator extends AbstractHydrator
             // Filter keys, removing any we don't want
             if (! $filter->filter($name)) {
                 unset($data[$name]);
+
                 continue;
             }
 

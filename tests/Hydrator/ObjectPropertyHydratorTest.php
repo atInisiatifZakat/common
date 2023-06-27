@@ -10,7 +10,7 @@ use Laminas\Hydrator\ObjectPropertyHydrator as LaminasObjectPropertyHydrator;
 
 final class ObjectPropertyHydratorTest extends TestCase
 {
-    public function testCannotHydrateNotExistsProperty(): void
+    public function test_cannot_hydrate_not_exists_property(): void
     {
         $hydrator = new ObjectPropertyHydrator();
 
@@ -19,7 +19,8 @@ final class ObjectPropertyHydratorTest extends TestCase
             'bazBar' => 'foo',
         ];
 
-        $foo = new class() {
+        $foo = new class()
+        {
             public string $fooBar;
 
             public bool  $boolean = true;
@@ -31,7 +32,7 @@ final class ObjectPropertyHydratorTest extends TestCase
         $this->assertTrue($foo->boolean);
     }
 
-    public function testCanHydrateNotExistsProperty(): void
+    public function test_can_hydrate_not_exists_property(): void
     {
         $hydrator = new LaminasObjectPropertyHydrator();
 
@@ -40,7 +41,8 @@ final class ObjectPropertyHydratorTest extends TestCase
             'bazBar' => 'foo',
         ];
 
-        $foo = new class() {
+        $foo = new class()
+        {
             public string $fooBar;
         };
 

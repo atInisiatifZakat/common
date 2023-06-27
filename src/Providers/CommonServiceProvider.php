@@ -11,10 +11,10 @@ final class CommonServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/common.php', 'common');
+        $this->mergeConfigFrom(__DIR__.'/../../config/common.php', 'common');
 
         if (Common::isRunningMigrations()) {
-            $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+            $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         }
     }
 }

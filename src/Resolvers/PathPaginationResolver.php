@@ -31,9 +31,9 @@ final class PathPaginationResolver
         $host = $request->header('X-Forwarded-Host', $request->getHost());
 
         /** @var string $path */
-        $path = $request->header('X-Forwarded-Prefix', '/' . $request->path());
+        $path = $request->header('X-Forwarded-Prefix', '/'.$request->path());
 
-        return $schema . '://' . $host . $path;
+        return $schema.'://'.$host.$path;
     }
 
     private function makeDefault(Request $request): string

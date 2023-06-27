@@ -66,7 +66,7 @@ trait TaggableCacheAware
 
         $hash = \md5(\json_encode($args));
 
-        $cacheKey = $class . '@' . $method . '.' . $hash;
+        $cacheKey = $class.'@'.$method.'.'.$hash;
 
         /** @psalm-suppress UndefinedInterfaceMethod */
         $store = $this->getCache()->tags($this->getTagName());

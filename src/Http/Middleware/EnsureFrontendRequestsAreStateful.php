@@ -18,7 +18,7 @@ final class EnsureFrontendRequestsAreStateful
     {
         $this->configureSecureCookieSessions();
 
-        return (new Pipeline(app()))->send($request)->through(static::fromFrontend($request) ? [
+        return (new Pipeline(app()))->send($request)->through(self::fromFrontend($request) ? [
             function ($request, $next) {
                 $request->attributes->set('sanctum', true);
 
@@ -52,7 +52,7 @@ final class EnsureFrontendRequestsAreStateful
         $stateful = array_filter(config('sanctum.stateful', []));
 
         return Str::is(Collection::make($stateful)->map(function ($uri) {
-            return trim($uri) . '/*';
+            return trim($uri).'/*';
         })->all(), $domain);
     }
 

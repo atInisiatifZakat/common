@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.13.0@a0a9c27630bcf8301ee78cb06741d2907d8c9fef">
+  <file src="src/Abstracts/AbstractRepository.php">
+    <PossiblyUnusedParam>
+      <code>$column</code>
+      <code>$column</code>
+      <code>$columns</code>
+      <code>$columns</code>
+      <code>$id</code>
+      <code>$id</code>
+      <code>$resource</code>
+      <code>$value</code>
+      <code>$value</code>
+    </PossiblyUnusedParam>
+    <UndefinedClass>
+      <code>ModelRepositoryInterface</code>
+    </UndefinedClass>
+    <UnusedClass>
+      <code>AbstractRepository</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Abstracts/Event.php">
+    <UnusedClass>
+      <code>Event</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Abstracts/ModelBuilder.php">
+    <UnusedClass>
+      <code>ModelBuilder</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Common.php">
+    <PossiblyUnusedMethod>
+      <code>ignoreMigrations</code>
+      <code>runningMigrations</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Concerns/EloquentAwareRepository.php">
+    <PossiblyUnusedParam>
+      <code>$attempts</code>
+      <code>$callback</code>
+    </PossiblyUnusedParam>
+  </file>
+  <file src="src/Concerns/TaggableCacheAware.php">
+    <PossiblyUnusedParam>
+      <code>$args</code>
+      <code>$cacheLifetime</code>
+      <code>$callback</code>
+      <code>$class</code>
+      <code>$factory</code>
+      <code>$method</code>
+    </PossiblyUnusedParam>
+  </file>
+  <file src="src/Concerns/UuidPrimaryKey.php">
+    <PossiblyUnusedMethod>
+      <code>bootUuidPrimaryKey</code>
+      <code>getId</code>
+      <code>setId</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Contracts/HasBranchInterface.php">
+    <UnusedClass>
+      <code>HasBranchInterface</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Contracts/Notable.php">
+    <UnusedClass>
+      <code>Notable</code>
+    </UnusedClass>
+  </file>
+  <file src="src/DataTransfers/Caster/DateTimeCaster.php">
+    <UnusedClass>
+      <code>DateTimeCaster</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Exceptions/DomainActionException.php">
+    <UnusedClass>
+      <code>DomainActionException</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Exceptions/DomainModelExistException.php">
+    <UnusedClass>
+      <code>DomainModelExistException</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Exceptions/DomainModelNotExistException.php">
+    <UnusedClass>
+      <code>DomainModelNotExistException</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Factories/BranchFactory.php">
+    <MissingTemplateParam>
+      <code>BranchFactory</code>
+    </MissingTemplateParam>
+    <UndefinedDocblockClass>
+      <code><![CDATA[$this->faker]]></code>
+      <code><![CDATA[$this->faker]]></code>
+      <code><![CDATA[$this->faker->uuid]]></code>
+    </UndefinedDocblockClass>
+    <UnusedClass>
+      <code>BranchFactory</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Http/Middleware/EnsureFrontendRequestsAreStateful.php">
+    <UnusedClass>
+      <code>EnsureFrontendRequestsAreStateful</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Hydrator/ObjectPropertyHydrator.php">
+    <UnusedClass>
+      <code>ObjectPropertyHydrator</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Providers/CommonServiceProvider.php">
+    <UnusedClass>
+      <code>CommonServiceProvider</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Providers/TelescopeServiceProvider.php">
+    <UnusedClass>
+      <code>TelescopeServiceProvider</code>
+    </UnusedClass>
+  </file>
+  <file src="src/Resolvers/PathPaginationResolver.php">
+    <PossiblyUnusedMethod>
+      <code>resolveFor</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Testing/PHPUnit/Hooks/BypassFinalHook.php">
+    <UnusedClass>
+      <code>BypassFinalHook</code>
+    </UnusedClass>
+  </file>
+</files>

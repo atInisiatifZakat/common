@@ -39,7 +39,7 @@ trait UuidPrimaryKey
     }
 
     /**
-     * @param null|string $id
+     * @param  null|string  $id
      *
      * @psalm-suppress ImplementedParamTypeMismatch
      */

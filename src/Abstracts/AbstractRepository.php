@@ -19,7 +19,6 @@ use Inisiatif\Package\Contract\Common\Repository\EloquentAwareRepositoryInterfac
 abstract class AbstractRepository implements ModelRepositoryInterface, TaggableCacheAwareInterface, EloquentAwareRepositoryInterface
 {
     use TaggableCacheAware;
-
     use EloquentAwareRepository;
 
     public function save(ResourceInterface $resource): bool

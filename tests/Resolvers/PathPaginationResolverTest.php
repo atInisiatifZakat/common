@@ -10,14 +10,14 @@ use Inisiatif\Package\Common\Resolvers\PathPaginationResolver;
 
 final class PathPaginationResolverTest extends TestCase
 {
-    public function testCanCreateDefaultPath(): void
+    public function test_can_create_default_path(): void
     {
         $request = new Request();
 
         $this->assertSame('http://:', PathPaginationResolver::resolveFor('default', $request));
     }
 
-    public function testCanCreatePathFromKongProxy(): void
+    public function test_can_create_path_from_kong_proxy(): void
     {
         $request = new Request([], [], [], [], [], [
             'HTTP_X_FORWARDED_SCHEME' => 'http',

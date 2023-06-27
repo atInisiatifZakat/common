@@ -1,2 +1,10 @@
 /vendor
 composer.lock
+.phpunit.result.cache
+/.idea
+
+# Github Action
+DOCKER_ENV
+Dockerfile-php-build
+docker_tag
+output.log
