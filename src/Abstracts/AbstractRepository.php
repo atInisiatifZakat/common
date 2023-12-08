@@ -16,10 +16,10 @@ use Inisiatif\Package\Contract\Common\Concern\TaggableCacheAwareInterface;
 use Inisiatif\Package\Contract\Common\Repository\ModelRepositoryInterface;
 use Inisiatif\Package\Contract\Common\Repository\EloquentAwareRepositoryInterface;
 
-abstract class AbstractRepository implements ModelRepositoryInterface, TaggableCacheAwareInterface, EloquentAwareRepositoryInterface
+abstract class AbstractRepository implements EloquentAwareRepositoryInterface, ModelRepositoryInterface, TaggableCacheAwareInterface
 {
-    use TaggableCacheAware;
     use EloquentAwareRepository;
+    use TaggableCacheAware;
 
     public function save(ResourceInterface $resource): bool
     {
