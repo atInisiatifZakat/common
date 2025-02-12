@@ -21,6 +21,10 @@ return new class() extends Migration
 
             $table->uuid('parent_id')->nullable();
 
+            if (! Schema::hasColumn(\config('common.tables.branch'), 'zona')) {
+                $table->string('zona')->nullable();
+            }
+
             $table->timestamps();
         });
     }
