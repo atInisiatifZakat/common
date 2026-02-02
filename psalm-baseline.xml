@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="5.26.1@d747f6500b38ac4f7dfc5edbcae6e4b637d7add0">
+  <file src="src/Abstracts/AbstractRepository.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[$this->getModel()->newQuery()->where($column, $value)->first()]]></code>
+      <code><![CDATA[$this->getModel()->newQuery()->where($columns)->first()]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[?ResourceInterface]]></code>
+      <code><![CDATA[?ResourceInterface]]></code>
+    </InvalidReturnType>
+  </file>
   <file src="src/Abstracts/Event.php">
     <UnusedClass>
       <code><![CDATA[Event]]></code>
