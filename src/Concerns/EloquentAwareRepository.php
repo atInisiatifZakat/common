@@ -12,7 +12,7 @@ use RuntimeException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\ConnectionInterface;
-use Inisiatif\Package\Contract\Common\Model\ResourceInterface;
+use Inisiatif\Package\Common\Contracts\ResourceInterface;
 
 trait EloquentAwareRepository
 {
