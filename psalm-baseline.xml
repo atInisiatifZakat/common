@@ -79,6 +79,9 @@
     </UnusedClass>
   </file>
   <file src="src/Factories/BranchFactory.php">
+    <MissingTemplateParam>
+      <code><![CDATA[BranchFactory]]></code>
+    </MissingTemplateParam>
     <UndefinedDocblockClass>
       <code><![CDATA[$this->faker]]></code>
       <code><![CDATA[$this->faker]]></code>
