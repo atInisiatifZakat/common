@@ -4,6 +4,4 @@ declare(strict_types=1);
 
 namespace Inisiatif\Package\Common\Exceptions;
 
-final class DomainActionException extends DomainException
-{
-}
+final class DomainActionException extends DomainException {}

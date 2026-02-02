@@ -10,11 +10,11 @@ use Ramsey\Uuid\UuidInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Inisiatif\Package\Common\Concerns\TaggableCacheAware;
+use Inisiatif\Package\Common\Contracts\ResourceInterface;
 use Inisiatif\Package\Common\Concerns\EloquentAwareRepository;
-use Inisiatif\Package\Contract\Common\Model\ResourceInterface;
-use Inisiatif\Package\Contract\Common\Concern\TaggableCacheAwareInterface;
-use Inisiatif\Package\Contract\Common\Repository\ModelRepositoryInterface;
-use Inisiatif\Package\Contract\Common\Repository\EloquentAwareRepositoryInterface;
+use Inisiatif\Package\Common\Contracts\ModelRepositoryInterface;
+use Inisiatif\Package\Common\Contracts\TaggableCacheAwareInterface;
+use Inisiatif\Package\Common\Contracts\EloquentAwareRepositoryInterface;
 
 abstract class AbstractRepository implements EloquentAwareRepositoryInterface, ModelRepositoryInterface, TaggableCacheAwareInterface
 {

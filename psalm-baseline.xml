@@ -1,88 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.13.0@a0a9c27630bcf8301ee78cb06741d2907d8c9fef">
+<files psalm-version="5.26.1@d747f6500b38ac4f7dfc5edbcae6e4b637d7add0">
   <file src="src/Abstracts/Event.php">
     <UnusedClass>
-      <code>Event</code>
+      <code><![CDATA[Event]]></code>
     </UnusedClass>
   </file>
   <file src="src/Abstracts/ModelBuilder.php">
     <UnusedClass>
-      <code>ModelBuilder</code>
+      <code><![CDATA[ModelBuilder]]></code>
     </UnusedClass>
   </file>
   <file src="src/Common.php">
     <PossiblyUnusedMethod>
-      <code>ignoreMigrations</code>
-      <code>runningMigrations</code>
-    </PossiblyUnusedMethod>
-  </file>
-  <file src="src/Concerns/EloquentAwareRepository.php">
-    <PossiblyUnusedMethod>
-      <code>newModelQuery</code>
+      <code><![CDATA[ignoreMigrations]]></code>
+      <code><![CDATA[runningMigrations]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Concerns/TaggableCacheAware.php">
-    <PossiblyUnusedMethod>
-      <code>disableCache</code>
-      <code>makeForeverCache</code>
-    </PossiblyUnusedMethod>
     <PossiblyUnusedReturnValue>
-      <code>bool</code>
+      <code><![CDATA[bool]]></code>
     </PossiblyUnusedReturnValue>
   </file>
   <file src="src/Concerns/UuidPrimaryKey.php">
     <PossiblyUnusedMethod>
-      <code>bootUuidPrimaryKey</code>
-      <code>getId</code>
-      <code>setId</code>
+      <code><![CDATA[bootUuidPrimaryKey]]></code>
+      <code><![CDATA[getId]]></code>
+      <code><![CDATA[setId]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Contracts/EloquentAwareRepositoryInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[beginTransaction]]></code>
+      <code><![CDATA[commit]]></code>
+      <code><![CDATA[newModelQuery]]></code>
+      <code><![CDATA[rollBack]]></code>
+      <code><![CDATA[transaction]]></code>
     </PossiblyUnusedMethod>
   </file>
   <file src="src/Contracts/HasBranchInterface.php">
     <UnusedClass>
-      <code>HasBranchInterface</code>
+      <code><![CDATA[HasBranchInterface]]></code>
     </UnusedClass>
+  </file>
+  <file src="src/Contracts/ModelRepositoryInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[delete]]></code>
+      <code><![CDATA[findOneUsingColumns]]></code>
+      <code><![CDATA[findUsingColumn]]></code>
+      <code><![CDATA[findUsingColumns]]></code>
+      <code><![CDATA[save]]></code>
+    </PossiblyUnusedMethod>
   </file>
   <file src="src/Contracts/Notable.php">
     <UnusedClass>
-      <code>Notable</code>
+      <code><![CDATA[Notable]]></code>
     </UnusedClass>
+  </file>
+  <file src="src/Contracts/TaggableCacheAwareInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[disableCache]]></code>
+      <code><![CDATA[makeForeverCache]]></code>
+      <code><![CDATA[setCache]]></code>
+    </PossiblyUnusedMethod>
   </file>
   <file src="src/Exceptions/DomainActionException.php">
     <UnusedClass>
-      <code>DomainActionException</code>
+      <code><![CDATA[DomainActionException]]></code>
     </UnusedClass>
   </file>
   <file src="src/Exceptions/DomainModelExistException.php">
     <UnusedClass>
-      <code>DomainModelExistException</code>
+      <code><![CDATA[DomainModelExistException]]></code>
     </UnusedClass>
   </file>
   <file src="src/Exceptions/DomainModelNotExistException.php">
     <UnusedClass>
-      <code>DomainModelNotExistException</code>
+      <code><![CDATA[DomainModelNotExistException]]></code>
     </UnusedClass>
   </file>
   <file src="src/Factories/BranchFactory.php">
-    <MissingTemplateParam>
-      <code>BranchFactory</code>
-    </MissingTemplateParam>
     <UndefinedDocblockClass>
       <code><![CDATA[$this->faker]]></code>
       <code><![CDATA[$this->faker]]></code>
       <code><![CDATA[$this->faker->uuid]]></code>
     </UndefinedDocblockClass>
     <UnusedClass>
-      <code>BranchFactory</code>
+      <code><![CDATA[BranchFactory]]></code>
     </UnusedClass>
   </file>
   <file src="src/Providers/CommonServiceProvider.php">
     <UnusedClass>
-      <code>CommonServiceProvider</code>
+      <code><![CDATA[CommonServiceProvider]]></code>
     </UnusedClass>
   </file>
   <file src="src/Providers/TelescopeServiceProvider.php">
     <UnusedClass>
-      <code>TelescopeServiceProvider</code>
+      <code><![CDATA[TelescopeServiceProvider]]></code>
     </UnusedClass>
   </file>
 </files>
