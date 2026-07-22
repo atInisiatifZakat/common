@@ -26,7 +26,7 @@ trait UuidPrimaryKey
             if (! isset($model->attributes[$model->getKeyName()])) {
                 $model->incrementing = false;
 
-                $uuid = Uuid::uuid6();
+                $uuid = Uuid::uuid7();
 
                 $model->attributes[$model->getKeyName()] = $uuid->toString();
             }
